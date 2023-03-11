@@ -1,0 +1,21 @@
+<!-- videos.html -->
+<h1>Videos</h1>
+<form method="POST">
+    <label for="title">Title</label>
+    <input type="text" id="title" name="title" required>
+    <label for="description">Description</label>
+    <textarea id="description" name="description" required></textarea>
+    <label for="url">URL</label>
+    <input type="text" id="url" name="url" required>
+    <button type="submit">Add Video</button>
+</form>
+<ul>
+    {% for video in videos %}
+    <li>
+        <h2>{{ video.title }}</h2>
+        <p>{{ video.description
+        }}</p>
+        <p>{{ video.url }}</p>
+    </li>
+    {% endfor %}
+</ul> 

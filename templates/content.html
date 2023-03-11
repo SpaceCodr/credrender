@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title%} {{ title }} {% endblock %}
+
+{% block content%}
+    <div class="container py-4 text-center">
+        <h1>Videos</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="list-group">
+                    {% for video in videos %}
+                    <a href="{{ url_for('video', video_id=video.id) }}" class="list-group-item list-group-item-action">{{ video.title }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
